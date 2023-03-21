@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Project Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        #project-description {
+            padding: 20px;
+        }
+        #results {
+            display: grid;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .result-item {
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>EchoSight: Unified Embedding Space for Audio and Video Modalities</h1>
+</header>
+<section id="project-description">
+    <h2>Project Description</h2>
+    <p>
+      Welcome to <strong>EchoSight</strong>, an innovative deep learning project focused on creating a joint embedding space for audio and video modalities. Our primary goal is to explore and develop a model that can effectively learn from both audio and video data simultaneously, utilizing the inherent relationships between these two modalities for enhanced representation and understanding.
+      Inspired by the success of the CLIP model for image and text joint multimodal contrastive learning, EchoSight extends this approach to the audio-visual domain. Our model is designed to capture the interdependencies between audio and video features, enabling a variety of applications such as multimodal search, content recommendation, and content generation.
+      EchoSight is built upon a cutting-edge deep learning architecture, leveraging state-of-the-art techniques in multimodal learning and contrastive optimization. The idea is to train the model on a large-scale dataset consisting of diverse audio-visual content, effectively learning the intricate relationships between sounds and visuals in a wide range of contexts.
+    </p>
+</section>
+
+<section id="project-description">
+    <h2>Project Status</h2>
+    <p>
+      Right now, the project is a work in progress. The first version of the model (EchoSight v0.1) was trained a small dataset (<a href="http://bvision11.cs.unc.edu/bigpen/yipin/visual2sound_webpage/visual2sound.html">VEGAS</a> that now appears to be down...) which consists on a small set of classes (snoring, baby crying, water flowing, ...) and 21k videos. As mentioned above, the idea is to train the model on a bigger and more general dataset like YouTube-8M.
+    </p>
+</section>
+
+<section id="results">
+<h2>Results</h2>
+
+<p>
+  We won't provide any metrics yet as the model is yet to be defined. But we share some preliminary results. Note that the lengths of the video and audio are not seen by the model as they are internally cropped, we've included the full audio and video for aesthetic purposes.
+</p>
+
+<div class="result-item">
+    <h3>Barking Dog</h3>
+    <p>
+        The video represents a (scary) barking dog.
+    </p>
+    <video width="320" height="240" controls muted>
+        <source src="test_data/dog.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <h3>Audio Candidates</h3>
+    <audio controls>
+        <source src="test_data/dog_0.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="test_data/dog_1.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="test_data/dog_2.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="test_data/noise_1.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p>
+        The model succesfully choses the correct audio (first one) as the closest to the video.
+    </p>
+</div>
+
+<div class="result-item">
+    <h3>Flowing Water</h3>
+    <p>
+        The video represents flowing water in a pool with some other external noise.
+    </p>
+    <video width="320" height="240" controls muted>
+        <source src="test_data/water.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <h3>Audio Candidates</h3>
+    <audio controls>
+        <source src="test_data/water_0.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="test_data/water_1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="test_data/water_2.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="test_data/noise_1.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p>
+        The model succesfully choses the correct audio (first one) as the closest to the video.
+    </p>
+</div>
+
+
+</section>
+</body>
+</html>
